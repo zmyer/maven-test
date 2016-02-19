@@ -20,16 +20,14 @@ public class App
 		
 	}
 	
-    public static void main( String[] args )
+    public static void main( String[] args ) throws InterruptedException
     {
         System.out.println( "Hello World!" );
-        
-        App app = new App();
-        RunOne one = new RunOne();
+      
         Thread thread = new Thread(new RunOne());
         thread.setDaemon(false);
         
         thread.start();
-        
+        thread.join();
     }
 }
